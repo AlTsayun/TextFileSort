@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <TextBox x:Name="generatePathTextBox" Width="200" Height="20" VerticalAlignment="Center" Margin="10"  Grid.Column="0" Grid.Row="0"/>
+        <Button x:Name="chooseGeneratePathButton"  Width="30" Height="20" Content="..." Grid.Column="1" Grid.Row="0" />
+        <Button x:Name="generateButton"  Width="100" Height="30" Content="Generate" Grid.Column="2" Grid.Row="0" />
+
+        <TextBox x:Name="sortPathTextBox"  Width="200" Height="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+        <Button x:Name="chooseSortPathButton"  Width="30" Height="30" Content="..." Grid.Column="1" Grid.Row="1" />
+        <Button x:Name="sortButton"  Width="100" Height="30" Content="Sort" Grid.Column="2" Grid.Row="1" />
+
+    </Grid>
+</Window>
