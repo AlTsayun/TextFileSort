@@ -40,7 +40,7 @@ namespace ConsoleApplication
                 {
                     using(FileStream stream = new FileInfo(path).Create())
                     {
-                        long bytesToSave = maxFileSize;
+                        var bytesToSave = maxFileSize;
                         while (bytesToSave > 0)
                         {
                             var bytes = Encoding.Unicode.GetBytes(GenerateCharSequence(maxLineLength) + System.Environment.NewLine);

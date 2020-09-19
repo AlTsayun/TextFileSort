@@ -5,25 +5,106 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="300" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="30"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
         
-        <TextBox x:Name="generatePathTextBox" Width="200" Height="20" VerticalAlignment="Center" Margin="10"  Grid.Column="0" Grid.Row="0"/>
-        <Button x:Name="chooseGeneratePathButton"  Width="30" Height="20" Content="..." Grid.Column="1" Grid.Row="0" />
-        <Button x:Name="generateButton"  Width="100" Height="30" Content="Generate" Grid.Column="2" Grid.Row="0" />
+        <Grid Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <Label VerticalAlignment="Center" Margin="15 0 0 0"  Grid.Column="0" Grid.Row="0">
+                Line length
+            </Label>
+            
+            <TextBox x:Name="lineLengthTextBox" Width="150" Height="20" VerticalAlignment="Center" Margin="10"
+                Grid.Column="1" Grid.Row="0" />
+            
+            
+            
+            <Label VerticalAlignment="Center" Margin="15 0 0 0" Grid.Column="0" Grid.Row="1">
+                File size (bytes)
+            </Label>
+            
+            <TextBox x:Name="fileSizeTextBox" Width="150" Height="20" VerticalAlignment="Center" Margin="10"
+                     Grid.Column="1" Grid.Row="1" />       
+            
+            
+            <Label VerticalAlignment="Center" Margin="15 0 0 0" Grid.Column="0" Grid.Row="2">
+                Seed (empty for random)
+            </Label>
+            
+            <TextBox x:Name="seedTextBox" Width="150" Height="20" VerticalAlignment="Center" Margin="10"
+                     Grid.Column="1" Grid.Row="2" />
+            
+            
+            <!-- <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2" > -->
+            <!-- </Border> -->
 
-        <TextBox x:Name="sortPathTextBox"  Width="200" Height="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-        <Button x:Name="chooseSortPathButton"  Width="30" Height="30" Content="..." Grid.Column="1" Grid.Row="1" />
-        <Button x:Name="sortButton"  Width="100" Height="30" Content="Sort" Grid.Column="2" Grid.Row="1" />
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <TextBox x:Name="generatePathTextBox" Width="200" Height="20" VerticalAlignment="Center" Margin="10"  Grid.Column="0" Grid.Row="0"/>
+            <Button x:Name="chooseGeneratePathButton"  Width="30" Height="20" Content="..." Grid.Column="1" Grid.Row="0" Click="ChooseGeneratePathButton_OnClick"/>
+            <Button x:Name="generateButton"  Width="100" Height="30" Content="Generate" Grid.Column="2" Grid.Row="0" Click="GenerateButton_OnClick"/>
+            
+        </Grid>
+        
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <Label VerticalAlignment="Center" Margin="15 0 0 0"  Grid.Column="0" Grid.Row="0">
+                Bucket size (bytes)
+            </Label>
+            
+            <TextBox x:Name="bucketSizeTextBox" Width="150" Height="20" VerticalAlignment="Center" Margin="10"
+                     Grid.Column="1" Grid.Row="0" />
 
+        </Grid>
+        
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="sortPathTextBox"  Width="200" Height="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+            <Button x:Name="chooseSortPathButton"  Width="30" Height="30" Content="..." Grid.Column="1" Grid.Row="3" Click="ChooseSortPathButton_OnClick" />
+            <Button x:Name="sortButton"  Width="100" Height="30" Content="Sort" Grid.Column="2" Grid.Row="3" Click="SortButton_OnClick"/>
+
+        </Grid>
     </Grid>
 </Window>

@@ -10,6 +10,10 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
+            if (args.Length == 0)
+            {
+                
+            }
             var now = DateTime.Now;
             Console.WriteLine("Начинаю профилирование: " + now);
             var prev = now;
@@ -24,6 +28,6 @@ namespace ConsoleApplication
             now = DateTime.Now;
             Console.WriteLine("Файл сгенерирован за " + (now - prev) + " : " + now);
         }
-
+        
     }
 }
