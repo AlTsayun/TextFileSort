@@ -36,9 +36,9 @@ namespace ConsoleApplication
             
             try
             {
-                // using(var reader = new StreamReader(source.OpenRead(), Encoding.Unicode))
-                // {
-                    var enumerator = File.ReadLines(source.FullName).GetEnumerator();
+                using(var reader = new StreamReader(source.OpenRead(), Encoding.Unicode))
+                {
+                    // var enumerator = File.ReadLines(source.FullName).GetEnumerator();
 
                     for (var i = 0; i < buckets.Count; i++)
                     {
@@ -49,16 +49,16 @@ namespace ConsoleApplication
                                 var bytesToSave = maxBucketSize;
                                 while (bytesToSave > 0)
                                 {
-                                    // if (reader.EndOfStream)
-                                    // {
-                                    //     break;
-                                    // }
-                                    // var bytes = Encoding.Unicode.GetBytes(reader.ReadLine() + System.Environment.NewLine);
-                                    if (!enumerator.MoveNext())
+                                    if (reader.EndOfStream)
                                     {
                                         break;
                                     }
-                                    var bytes = Encoding.Unicode.GetBytes(enumerator.Current + System.Environment.NewLine);
+                                    var bytes = Encoding.Unicode.GetBytes(reader.ReadLine() + System.Environment.NewLine);
+                                    // if (!enumerator.MoveNext())
+                                    // {
+                                    //     break;
+                                    // }
+                                    // var bytes = Encoding.Unicode.GetBytes(enumerator.Current + System.Environment.NewLine);
                                     bytesToSave -= bytes.Length;
                                     bucketStream.Write(bytes, 0, bytes.Length);
                                 }
@@ -72,9 +72,9 @@ namespace ConsoleApplication
                         }
                             
                     }
-                    // reader.Close();
+                    reader.Close();
                     
-                // }
+                }
             }
             catch (IOException)
             {

@@ -49,10 +49,7 @@
             
             <TextBox x:Name="seedTextBox" Width="150" Height="20" VerticalAlignment="Center" Margin="10"
                      Grid.Column="1" Grid.Row="2" />
-            
-            
-            <!-- <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2" > -->
-            <!-- </Border> -->
+
 
         </Grid>
         
@@ -102,7 +99,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBox x:Name="sortPathTextBox"  Width="200" Height="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
-            <Button x:Name="chooseSortPathButton"  Width="30" Height="30" Content="..." Grid.Column="1" Grid.Row="3" Click="ChooseSortPathButton_OnClick" />
+            <Button x:Name="chooseSortPathButton"  Width="30" Height="20" Content="..." Grid.Column="1" Grid.Row="3" Click="ChooseSortPathButton_OnClick" />
             <Button x:Name="sortButton"  Width="100" Height="30" Content="Sort" Grid.Column="2" Grid.Row="3" Click="SortButton_OnClick"/>
 
         </Grid>

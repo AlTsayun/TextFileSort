@@ -30,8 +30,14 @@ namespace WpfApplication
         }
 
         private void ChooseSortPathButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
+        {            
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "txt files (*.txt)|*.txt| All files (*.*)|*.*";
+            dialog.CheckFileExists = true;
+            if (dialog.ShowDialog() == true)
+            {
+                sortPathTextBox.Text = dialog.FileName; 
+            }
         }
 
         private void GenerateButton_OnClick(object sender, RoutedEventArgs e)
@@ -87,7 +93,7 @@ namespace WpfApplication
                     ,MessageBoxImage.Error
                     ,MessageBoxResult.OK
                     ,MessageBoxOptions.None
-                );
+                    );
             }
             else
             {
@@ -130,8 +136,7 @@ namespace WpfApplication
             {
                 try
                 {
-                    using (File.Create(sortPathTextBox.Text)){ }
-                    File.Delete(sortPathTextBox.Text);
+                    using (File.OpenWrite(sortPathTextBox.Text)){ }
                 }
                 catch
                 {
